@@ -62,7 +62,7 @@
 | street        | string      | null: false                      |
 | building      | string      |                                  |
 | tel_num       | string      | null: false                      |
-| pay_info_id   | integer     | null: false,foreign_key:true     |
+| pay_info      | references  | null: false,foreign_key:true     |
 
 ### Association
 
