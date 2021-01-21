@@ -7,10 +7,10 @@
 | nick_name              | string  | null: false              |
 | email                  | string  | null: false,unique: true |
 | encrypted_password     | string  | null: false              |
-| family_name            | string  | null: false              |
-| personal_name          | string  | null: false              |
-| family_name_kana       | string  | null: false              |
-| personal_name_kana     | string  | null: false              |
+| last-name              | string  | null: false              |
+| first-name             | string  | null: false              |
+| last-name-kana         | string  | null: false              |
+| first-name-kana        | string  | null: false              |
 | barth_day              | date    | null: false              |
 
 ### Association
