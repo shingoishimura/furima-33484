@@ -7,16 +7,16 @@
 | nick_name              | string  | null: false              |
 | email                  | string  | null: false,unique: true |
 | encrypted_password     | string  | null: false              |
-| family_name            | string  | null: false              |
-| personal_name          | string  | null: false              |
-| family_name_kana       | string  | null: false              |
-| personal_name_kana     | string  | null: false              |
+| last_name              | string  | null: false              |
+| first_name             | string  | null: false              |
+| last_name_kana         | string  | null: false              |
+| first_name_kana        | string  | null: false              |
 | barth_day              | date    | null: false              |
 
 ### Association
 
 - has_many :items
-- has_many : pay_infos
+- has_many :orders
 
 
 ## items テーブル
@@ -37,9 +37,9 @@
 ### Association
 
 - belongs_to :user
-- has_one    :pay_info
+- has_one    :order
 
-## pay_infos テーブル
+## orders テーブル
 
 | Column        | Type        | Options                           |
 | --------      | ------      | -----------                       |
@@ -62,8 +62,8 @@
 | street        | string      | null: false                      |
 | building      | string      |                                  |
 | tel_num       | string      | null: false                      |
-| pay_info      | references  | null: false,foreign_key:true     |
+| order      | references  | null: false,foreign_key:true     |
 
 ### Association
 
-- belongs_to :pay_info
+- belongs_to :order
