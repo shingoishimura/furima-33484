@@ -18,9 +18,7 @@ class Item < ApplicationRecord
     validates :state_id
     validates :send_fee_id
     validates :prefecture_id
+    validates :send_period_id
+    
   end
-
-  validates :send_period_id, numericality: { other_than: 1, message: "can't be blank" }
-
-  
 end
