@@ -1,9 +1,8 @@
 FactoryBot.define do
   factory :item do
-    
     item_name { 'aaaa' }
     text { 'aaaa' }
-    category_id {2}
+    category_id { 2 }
     state_id { 2 }
     send_fee_id { 2 }
     prefecture_id { 2 }

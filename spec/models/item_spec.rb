@@ -64,7 +64,7 @@ RSpec.describe 'Item', type: :model do
     end
 
     it 'priceが10,000,000以上では登録できないこと' do
-      @item.price = 10000000
+      @item.price = 10_000_000
       @item.valid?
       expect(@item.errors.full_messages).to include('Price は300円から9,999,999円の範囲で入力してください,また半角数字のみ入力できます')
     end
@@ -86,8 +86,6 @@ RSpec.describe 'Item', type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include('Price は300円から9,999,999円の範囲で入力してください,また半角数字のみ入力できます')
     end
-
-
 
     it 'imageが空では保存できないこと' do
       @item.image = nil
