@@ -5,21 +5,12 @@ window.addEventListener('load', function(){
     const inputValue = priceInput.value;
     const addTaxDom = document.getElementById("add-tax-price");
     
-    addTaxPrice = inputValue*0.1
-    
-    if (addTaxPrice < 1){
-
-    addTaxPrice = 0
-    }
-
-    else { 
-
-    }
+    addTaxPrice = Math.floor(inputValue*0.1)
 
     addTaxDom.innerHTML = addTaxPrice
   
 
     const profitPrice = document.getElementById("profit");
-    profitPrice.innerHTML = inputValue - addTaxPrice
+    profitPrice.innerHTML = Math.floor(inputValue - addTaxPrice)
     
 })})
