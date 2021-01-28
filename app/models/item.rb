@@ -10,9 +10,19 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   validates :image, :item_name, :text, :price, presence: true
-  validates :price, numericality: {greater_than: 300,less_than:10000000 }
+  validates :price,
+            numericality: { greater_than: 300, less_than: 10_000_000, message: 'は300円から9,999,999円の範囲で入力してください,また半角数字のみ入力できます' }
 
+  with_options numericality: { other_than: 1, message: "can't be blank" } do
+    validates :category_id
+    validates :state_id
+    validates :send_fee_id
+    validates :prefecture_id
+  end
 
-  validates :category_id, :state_id, :send_fee_id, :prefecture_id, numericality: { other_than: 1 }
-  validates :send_period_id, numericality: { other_than: 0 }
+  validates :send_period_id, numericality: { other_than: 0, message: "can't be blank" }
+
+  def was_attached?
+    image.attached?
+  end
 end
