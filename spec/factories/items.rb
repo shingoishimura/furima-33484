@@ -1,15 +1,15 @@
 FactoryBot.define do
   factory :item do
-    id { '1' }
-    user_id { '1' }
+    id {1}
+    user_id {1}
     item_name { 'aaaa' }
     text { 'aaaa' }
-    category_id { '2' }
-    state_id { '2' }
-    send_fee_id { '2' }
-    prefecture_id { '2' }
-    send_period_id { '2' }
-    price { '2000' }
+    category_id {2}
+    state_id { 2 }
+    send_fee_id { 2 }
+    prefecture_id { 2 }
+    send_period_id { 2 }
+    price { 2000 }
     user
 
     after(:build) do |item|
