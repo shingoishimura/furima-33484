@@ -75,6 +75,20 @@ RSpec.describe 'Item', type: :model do
       expect(@item.errors.full_messages).to include('Price は300円から9,999,999円の範囲で入力してください,また半角数字のみ入力できます')
     end
 
+    it '半角英数混合では登録できないこと' do
+      @item.price = '123abc'
+      @item.valid?
+      expect(@item.errors.full_messages).to include('Price は300円から9,999,999円の範囲で入力してください,また半角数字のみ入力できます')
+    end
+
+    it '半角英語だけでは登録できないこと' do
+      @item.price = 'abc'
+      @item.valid?
+      expect(@item.errors.full_messages).to include('Price は300円から9,999,999円の範囲で入力してください,また半角数字のみ入力できます')
+    end
+
+
+
     it 'imageが空では保存できないこと' do
       @item.image = nil
       @item.valid?
