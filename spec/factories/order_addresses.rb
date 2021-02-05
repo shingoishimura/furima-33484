@@ -6,6 +6,6 @@ FactoryBot.define do
     city { 'aaaAAAあああアアア' }
     street { '五十海1-1-24' }
     tel_num { '08032847871' }
-
+    building {'２０３号室'}
   end
 end

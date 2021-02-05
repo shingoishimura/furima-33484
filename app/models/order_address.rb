@@ -6,7 +6,7 @@ class OrderAddress
     validates :token
     validates :user_id
     validates :item_id
-    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Must input include hyphen(-) in post code' }
+    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Must input include hyphen(-) in post code & harf size integer only' }
     validates :prefecture_id, numericality: { other_than: 1, message: 'select' }
     validates :city
     validates :street
