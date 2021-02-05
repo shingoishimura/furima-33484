@@ -1,17 +1,17 @@
 class OrderAddress
   include ActiveModel::Model
   attr_accessor :price, :token, :user_id, :item_id, :post_code, :prefecture_id, :city, :street, :building, :tel_num
-  
+
   with_options presence: true do
     validates :price
     validates :token
     validates :user_id
     validates :item_id
-    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "Must input include hyphen(-) in post code" }
-    validates :prefecture_id,  numericality: { other_than: 1, message: 'select' }
+    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Must input include hyphen(-) in post code' }
+    validates :prefecture_id, numericality: { other_than: 1, message: 'select' }
     validates :city
     validates :street
-    validates :tel_num, format: { with: /\A(0{1}\d{0,10})\z/,}
+    validates :tel_num, format: { with: /\A(0{1}\d{0,10})\z/ }
   end
 
   def save
