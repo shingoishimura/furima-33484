@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   belongs_to :send_period
 
   belongs_to :user
+
+  has_one :order
   has_one_attached :image
 
   validates :image, :item_name, :text, :price, presence: true
