@@ -6,6 +6,7 @@ RSpec.describe OrderAddress, type: :model do
       @order_address = FactoryBot.build(:order_address)
       @order_address.user_id = FactoryBot.build(:user)
       @order_address.item_id = FactoryBot.build(:item)
+    
     end
 
     context '内容に問題ない場合' do

@@ -7,7 +7,5 @@ FactoryBot.define do
     street { '五十海1-1-24' }
     tel_num { '08032847871' }
 
-    
-    price { '2000' }
   end
 end
