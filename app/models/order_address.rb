@@ -6,11 +6,11 @@ class OrderAddress
     validates :token
     validates :user_id
     validates :item_id
-    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Must input include hyphen(-) in post code & harf size integer only' }
-    validates :prefecture_id, numericality: { other_than: 1, message: 'select' }
+    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'は-（ハイフン）と半角数字を入力して下さい' }
+    validates :prefecture_id, numericality: { other_than: 1, message: 'を選んで下さい' }
     validates :city
     validates :street
-    validates :tel_num, format: { with: /\A(0{1}\d{0,10})\z/ }
+    validates :tel_num, format: { with: /\A(0{1}\d{0,10})\z/, message: 'は11桁以下半角数字で-（ハイフン）は不要です' }
   end
 
   def save
